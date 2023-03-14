@@ -12,6 +12,7 @@ const Authentication = (req, res, next) => {
     // console.log(decoded);
     req.body.email = decoded.email;
     req.body.userId = decoded.userId;
+    
     next();
   });
 };

@@ -1,9 +1,12 @@
 const express=require("express")
 const connection=require("./Config/db")
 const userRouter = require("./Route/user.route")
+const fileRouter=require("./Route/file.route")
+const cors=require("cors")
 const app=express()
 app.use(express.json())
 
+app.use(cors());
 
 
 app.get("/test",(req,res)=>{
@@ -12,6 +15,8 @@ app.get("/test",(req,res)=>{
 })
 
 app.use("/user",userRouter)
+
+app.use("/files",fileRouter)
 
 
 
