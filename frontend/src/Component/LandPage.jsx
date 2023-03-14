@@ -32,7 +32,7 @@ const  LandPage = () => {
 	const toast = useToast();
 	const arr=[]
 	const getUpload= () => {
-		fetch(`http://localhost:8080/files/uploadDetails/${user.email}`)
+		fetch(`https://docks-7gbn.onrender.com/files/uploadDetails/${user.email}`)
 
 			.then((res) => res.json())
 			.then((res) => setFile(res))
@@ -49,7 +49,7 @@ const  LandPage = () => {
 		// arr.push(...select)
 		// console.log("arr",arr)
 		e.preventDefault();
-		axios.post(`http://localhost:8080/files/uploadDetails`, {
+		axios.post(`https://docks-7gbn.onrender.com/files/uploadDetails`, {
 			email:user.email,
 			file:select.name,
 			size:select.size,
@@ -60,7 +60,7 @@ const  LandPage = () => {
 					alert("something went wrong")
 					
 				} else {
-					fetch(`http://localhost:8080/files/upload`, {
+					fetch(`https://docks-7gbn.onrender.com/files/upload`, {
 						method: "POST",
 						"Content-Type": "multipart/form-data",
 						body: formData,
@@ -82,7 +82,7 @@ const  LandPage = () => {
 	
 
 	const handleDelete = (id) => {
-		fetch(`http://localhost:8080/files/deleteUpload/${id}`, {
+		fetch(`https://docks-7gbn.onrender.com/files/deleteUpload/${id}`, {
 			method: "DELETE",
 		})
 			.then((res) => res.json())
